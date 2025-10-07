@@ -1,4 +1,4 @@
-module github.com/upbound/upjet-provider-template
+module github.com/unbounded-tech/provider-authentik
 
 go 1.21
 
