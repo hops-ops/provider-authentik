@@ -10,7 +10,14 @@ import (
 
 	ujconfig "github.com/crossplane/upjet/pkg/config"
 
-	"github.com/unbounded-tech/provider-authentik/config/null"
+	"github.com/unbounded-tech/provider-authentik/config/applications"
+	"github.com/unbounded-tech/provider-authentik/config/blueprints"
+	"github.com/unbounded-tech/provider-authentik/config/customization"
+	"github.com/unbounded-tech/provider-authentik/config/directory"
+	"github.com/unbounded-tech/provider-authentik/config/enterprise"
+	"github.com/unbounded-tech/provider-authentik/config/events"
+	"github.com/unbounded-tech/provider-authentik/config/rbac"
+	"github.com/unbounded-tech/provider-authentik/config/system"
 )
 
 const (
@@ -36,7 +43,15 @@ func GetProvider() *ujconfig.Provider {
 
 	for _, configure := range []func(provider *ujconfig.Provider){
 		// add custom config functions
-		null.Configure,
+		applications.Configure,
+		blueprints.Configure,
+		customization.Configure,
+		directory.Configure,
+		enterprise.Configure,
+		events.Configure,
+		// flows_stages.Configure,
+		rbac.Configure,
+		system.Configure,
 	} {
 		configure(pc)
 	}
