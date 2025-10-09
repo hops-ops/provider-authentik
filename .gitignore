@@ -12,3 +12,5 @@ cover.out
 
 # terraform provider src for reference
 terraform-provider-authentik/
+
+.tmp

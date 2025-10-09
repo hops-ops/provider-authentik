@@ -71,7 +71,7 @@ func Configure(p *config.Provider) {
 			TerraformName: "authentik_flow",
 		}
 		r.References["property_mappings"] = config.Reference{
-			TerraformName: "authentik_property_mapping_provider_oauth2",
+			TerraformName: "authentik_property_mapping_source_oauth",
 		}
 		r.References["signing_key"] = config.Reference{
 			TerraformName: "authentik_certificate_key_pair",
