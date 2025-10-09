@@ -10,10 +10,10 @@ func Configure(p *config.Provider) {
 		r.ShortGroup = ShortGroup
 		r.Kind = "GoogleWorkspace"
 		r.References["property_mappings"] = config.Reference{
-			TerraformName: "authentik_property_mapping_google_workspace",
+			TerraformName: "authentik_property_mapping_provider_google_workspace",
 		}
 		r.References["property_mappings_group"] = config.Reference{
-			TerraformName: "authentik_property_mapping_google_workspace",
+			TerraformName: "authentik_property_mapping_provider_google_workspace",
 		}
 	})
 
@@ -32,10 +32,10 @@ func Configure(p *config.Provider) {
 		r.ShortGroup = ShortGroup
 		r.Kind = "MicrosoftEntra"
 		r.References["property_mappings"] = config.Reference{
-			TerraformName: "authentik_property_mapping_microsoft_entra",
+			TerraformName: "authentik_property_mapping_provider_microsoft_entra",
 		}
 		r.References["property_mappings_group"] = config.Reference{
-			TerraformName: "authentik_property_mapping_microsoft_entra",
+			TerraformName: "authentik_property_mapping_provider_microsoft_entra",
 		}
 	})
 
@@ -86,7 +86,7 @@ func Configure(p *config.Provider) {
 			TerraformName: "authentik_flow",
 		}
 		r.References["property_mappings"] = config.Reference{
-			TerraformName: "authentik_property_mapping_rac",
+			TerraformName: "authentik_property_mapping_provider_rac",
 		}
 	})
 
@@ -100,7 +100,7 @@ func Configure(p *config.Provider) {
 			TerraformName: "authentik_flow",
 		}
 		r.References["property_mappings"] = config.Reference{
-			TerraformName: "authentik_property_mapping_radius",
+			TerraformName: "authentik_property_mapping_provider_radius",
 		}
 	})
 
@@ -117,7 +117,7 @@ func Configure(p *config.Provider) {
 			TerraformName: "authentik_flow",
 		}
 		r.References["property_mappings"] = config.Reference{
-			TerraformName: "authentik_property_mapping_saml",
+			TerraformName: "authentik_property_mapping_provider_saml",
 		}
 	})
 
@@ -125,10 +125,10 @@ func Configure(p *config.Provider) {
 		r.ShortGroup = ShortGroup
 		r.Kind = "SCIM"
 		r.References["property_mappings"] = config.Reference{
-			TerraformName: "authentik_property_mapping_scim",
+			TerraformName: "authentik_property_mapping_provider_scim",
 		}
 		r.References["property_mappings_group"] = config.Reference{
-			TerraformName: "authentik_property_mapping_scim",
+			TerraformName: "authentik_property_mapping_provider_scim",
 		}
 	})
 

@@ -10,7 +10,23 @@ package apis
 import (
 	"k8s.io/apimachinery/pkg/runtime"
 
-	v1alpha1 "github.com/unbounded-tech/provider-authentik/apis/null/v1alpha1"
+	v1alpha1 "github.com/unbounded-tech/provider-authentik/apis/applications/v1alpha1"
+	v1alpha1blueprints "github.com/unbounded-tech/provider-authentik/apis/blueprints/v1alpha1"
+	v1alpha1docker "github.com/unbounded-tech/provider-authentik/apis/docker/v1alpha1"
+	v1alpha1enterprise "github.com/unbounded-tech/provider-authentik/apis/enterprise/v1alpha1"
+	v1alpha1events "github.com/unbounded-tech/provider-authentik/apis/events/v1alpha1"
+	v1alpha1flows "github.com/unbounded-tech/provider-authentik/apis/flows/v1alpha1"
+	v1alpha1k8s "github.com/unbounded-tech/provider-authentik/apis/k8s/v1alpha1"
+	v1alpha1outposts "github.com/unbounded-tech/provider-authentik/apis/outposts/v1alpha1"
+	v1alpha1policies "github.com/unbounded-tech/provider-authentik/apis/policies/v1alpha1"
+	v1alpha1propertymapping "github.com/unbounded-tech/provider-authentik/apis/propertymapping/v1alpha1"
+	v1alpha1providers "github.com/unbounded-tech/provider-authentik/apis/providers/v1alpha1"
+	v1alpha1rac "github.com/unbounded-tech/provider-authentik/apis/rac/v1alpha1"
+	v1alpha1rbac "github.com/unbounded-tech/provider-authentik/apis/rbac/v1alpha1"
+	v1alpha1sources "github.com/unbounded-tech/provider-authentik/apis/sources/v1alpha1"
+	v1alpha1stages "github.com/unbounded-tech/provider-authentik/apis/stages/v1alpha1"
+	v1alpha1system "github.com/unbounded-tech/provider-authentik/apis/system/v1alpha1"
+	v1alpha1users "github.com/unbounded-tech/provider-authentik/apis/users/v1alpha1"
 	v1alpha1apis "github.com/unbounded-tech/provider-authentik/apis/v1alpha1"
 	v1beta1 "github.com/unbounded-tech/provider-authentik/apis/v1beta1"
 )
@@ -19,6 +35,22 @@ func init() {
 	// Register the types with the Scheme so the components can map objects to GroupVersionKinds and back
 	AddToSchemes = append(AddToSchemes,
 		v1alpha1.SchemeBuilder.AddToScheme,
+		v1alpha1blueprints.SchemeBuilder.AddToScheme,
+		v1alpha1docker.SchemeBuilder.AddToScheme,
+		v1alpha1enterprise.SchemeBuilder.AddToScheme,
+		v1alpha1events.SchemeBuilder.AddToScheme,
+		v1alpha1flows.SchemeBuilder.AddToScheme,
+		v1alpha1k8s.SchemeBuilder.AddToScheme,
+		v1alpha1outposts.SchemeBuilder.AddToScheme,
+		v1alpha1policies.SchemeBuilder.AddToScheme,
+		v1alpha1propertymapping.SchemeBuilder.AddToScheme,
+		v1alpha1providers.SchemeBuilder.AddToScheme,
+		v1alpha1rac.SchemeBuilder.AddToScheme,
+		v1alpha1rbac.SchemeBuilder.AddToScheme,
+		v1alpha1sources.SchemeBuilder.AddToScheme,
+		v1alpha1stages.SchemeBuilder.AddToScheme,
+		v1alpha1system.SchemeBuilder.AddToScheme,
+		v1alpha1users.SchemeBuilder.AddToScheme,
 		v1alpha1apis.SchemeBuilder.AddToScheme,
 		v1beta1.SchemeBuilder.AddToScheme,
 	)
