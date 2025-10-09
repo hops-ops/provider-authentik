@@ -1,0 +1,46 @@
+apiVersion: rbac.unbounded-tech.com/v1alpha1
+kind: RbacPermissionUser
+metadata:
+  annotations:
+    meta.upbound.io/example-id: rbac/v1alpha1/rbacpermissionuser
+  labels:
+    testing.upbound.io/example-name: global-permission
+  name: global-permission
+spec:
+  forProvider:
+    permission: authentik_flows.inspect_flow
+    userSelector:
+      matchLabels:
+        testing.upbound.io/example-name: name
+
+---
+
+apiVersion: authentik.unbounded-tech.com/v1alpha1
+kind: Flow
+metadata:
+  annotations:
+    meta.upbound.io/example-id: rbac/v1alpha1/rbacpermissionuser
+  labels:
+    testing.upbound.io/example-name: flow
+  name: flow
+spec:
+  forProvider:
+    designation: authorization
+    name: test-flow
+    slug: test-flow
+    title: Test flow
+
+---
+
+apiVersion: directory.unbounded-tech.com/v1alpha1
+kind: User
+metadata:
+  annotations:
+    meta.upbound.io/example-id: rbac/v1alpha1/rbacpermissionuser
+  labels:
+    testing.upbound.io/example-name: name
+  name: name
+spec:
+  forProvider:
+    name: User
+    username: user

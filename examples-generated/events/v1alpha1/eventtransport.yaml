@@ -1,0 +1,14 @@
+apiVersion: events.unbounded-tech.com/v1alpha1
+kind: EventTransport
+metadata:
+  annotations:
+    meta.upbound.io/example-id: events/v1alpha1/eventtransport
+  labels:
+    testing.upbound.io/example-name: transport
+  name: transport
+spec:
+  forProvider:
+    mode: webhook
+    name: my-transport
+    sendOnce: true
+    webhookUrl: https://foo.bar

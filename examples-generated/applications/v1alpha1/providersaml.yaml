@@ -1,0 +1,33 @@
+apiVersion: applications.unbounded-tech.com/v1alpha1
+kind: ProviderSaml
+metadata:
+  annotations:
+    meta.upbound.io/example-id: applications/v1alpha1/providersaml
+  labels:
+    testing.upbound.io/example-name: name
+  name: name
+spec:
+  forProvider:
+    acsUrl: http://localhost
+    authorizationFlowSelector:
+      matchLabels:
+        testing.upbound.io/example-name: authentik_flow
+    name: test-app
+
+---
+
+apiVersion: applications.unbounded-tech.com/v1alpha1
+kind: Application
+metadata:
+  annotations:
+    meta.upbound.io/example-id: applications/v1alpha1/providersaml
+  labels:
+    testing.upbound.io/example-name: name
+  name: name
+spec:
+  forProvider:
+    name: test-app
+    protocolProviderSelector:
+      matchLabels:
+        testing.upbound.io/example-name: name
+    slug: test-app

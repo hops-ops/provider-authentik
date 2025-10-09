@@ -1,0 +1,46 @@
+apiVersion: applications.unbounded-tech.com/v1alpha1
+kind: ServiceConnectionDocker
+metadata:
+  annotations:
+    meta.upbound.io/example-id: applications/v1alpha1/serviceconnectiondocker
+  labels:
+    testing.upbound.io/example-name: local
+  name: local
+spec:
+  forProvider:
+    local: true
+    name: local
+
+---
+
+apiVersion: system.unbounded-tech.com/v1alpha1
+kind: CertificateKeyPair
+metadata:
+  annotations:
+    meta.upbound.io/example-id: applications/v1alpha1/serviceconnectiondocker
+  labels:
+    testing.upbound.io/example-name: tls-auth
+  name: tls-auth
+spec:
+  forProvider:
+    certificateData: '...'
+    keyDataSecretRef:
+      key: example-key
+      name: example-secret
+      namespace: upbound-system
+    name: docker-tls-auth
+
+---
+
+apiVersion: system.unbounded-tech.com/v1alpha1
+kind: CertificateKeyPair
+metadata:
+  annotations:
+    meta.upbound.io/example-id: applications/v1alpha1/serviceconnectiondocker
+  labels:
+    testing.upbound.io/example-name: tls-verification
+  name: tls-verification
+spec:
+  forProvider:
+    certificateData: '...'
+    name: docker-tls-verification

@@ -1,0 +1,12 @@
+apiVersion: customization.unbounded-tech.com/v1alpha1
+kind: PolicyExpiry
+metadata:
+  annotations:
+    meta.upbound.io/example-id: customization/v1alpha1/policyexpiry
+  labels:
+    testing.upbound.io/example-name: name
+  name: name
+spec:
+  forProvider:
+    days: 3
+    name: expiry
