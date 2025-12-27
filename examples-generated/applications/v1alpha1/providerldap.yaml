@@ -1,0 +1,33 @@
+apiVersion: applications.unbounded-tech.com/v1alpha1
+kind: ProviderLdap
+metadata:
+  annotations:
+    meta.upbound.io/example-id: applications/v1alpha1/providerldap
+  labels:
+    testing.upbound.io/example-name: name
+  name: name
+spec:
+  forProvider:
+    baseDn: dc=ldap,dc=goauthentik,dc=io
+    bindFlowSelector:
+      matchLabels:
+        testing.upbound.io/example-name: authentik_flow
+    name: ldap-app
+
+---
+
+apiVersion: applications.unbounded-tech.com/v1alpha1
+kind: Application
+metadata:
+  annotations:
+    meta.upbound.io/example-id: applications/v1alpha1/providerldap
+  labels:
+    testing.upbound.io/example-name: name
+  name: name
+spec:
+  forProvider:
+    name: ldap-app
+    protocolProviderSelector:
+      matchLabels:
+        testing.upbound.io/example-name: name
+    slug: ldap-app

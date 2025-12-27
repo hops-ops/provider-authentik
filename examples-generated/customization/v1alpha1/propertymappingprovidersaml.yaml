@@ -1,0 +1,13 @@
+apiVersion: customization.unbounded-tech.com/v1alpha1
+kind: PropertyMappingProviderSaml
+metadata:
+  annotations:
+    meta.upbound.io/example-id: customization/v1alpha1/propertymappingprovidersaml
+  labels:
+    testing.upbound.io/example-name: saml-aws-rolessessionname
+  name: saml-aws-rolessessionname
+spec:
+  forProvider:
+    expression: return user.email
+    name: SAML AWS RoleSessionName
+    samlName: https://aws.amazon.com/SAML/Attributes/RoleSessionName

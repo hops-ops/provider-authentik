@@ -1,0 +1,11 @@
+apiVersion: customization.unbounded-tech.com/v1alpha1
+kind: PolicyReputation
+metadata:
+  annotations:
+    meta.upbound.io/example-id: customization/v1alpha1/policyreputation
+  labels:
+    testing.upbound.io/example-name: name
+  name: name
+spec:
+  forProvider:
+    name: reputation

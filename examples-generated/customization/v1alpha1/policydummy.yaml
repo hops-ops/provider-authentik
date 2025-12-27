@@ -1,0 +1,11 @@
+apiVersion: customization.unbounded-tech.com/v1alpha1
+kind: PolicyDummy
+metadata:
+  annotations:
+    meta.upbound.io/example-id: customization/v1alpha1/policydummy
+  labels:
+    testing.upbound.io/example-name: name
+  name: name
+spec:
+  forProvider:
+    name: dummy

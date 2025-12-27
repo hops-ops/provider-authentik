@@ -1,0 +1,12 @@
+apiVersion: customization.unbounded-tech.com/v1alpha1
+kind: PolicyExpression
+metadata:
+  annotations:
+    meta.upbound.io/example-id: customization/v1alpha1/policyexpression
+  labels:
+    testing.upbound.io/example-name: name
+  name: name
+spec:
+  forProvider:
+    expression: return True
+    name: expression

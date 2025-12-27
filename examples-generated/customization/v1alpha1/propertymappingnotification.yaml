@@ -1,0 +1,12 @@
+apiVersion: customization.unbounded-tech.com/v1alpha1
+kind: PropertyMappingNotification
+metadata:
+  annotations:
+    meta.upbound.io/example-id: customization/v1alpha1/propertymappingnotification
+  labels:
+    testing.upbound.io/example-name: name
+  name: name
+spec:
+  forProvider:
+    expression: 'return {"foo": context[''foo'']}'
+    name: custom-field

@@ -1,0 +1,70 @@
+apiVersion: applications.unbounded-tech.com/v1alpha1
+kind: Application
+metadata:
+  annotations:
+    meta.upbound.io/example-id: applications/v1alpha1/application
+  labels:
+    testing.upbound.io/example-name: name
+  name: name
+spec:
+  forProvider:
+    name: example-app
+    protocolProviderSelector:
+      matchLabels:
+        testing.upbound.io/example-name: name
+    slug: example-app
+
+---
+
+apiVersion: customization.unbounded-tech.com/v1alpha1
+kind: PolicyBinding
+metadata:
+  annotations:
+    meta.upbound.io/example-id: applications/v1alpha1/application
+  labels:
+    testing.upbound.io/example-name: app-access
+  name: app-access
+spec:
+  forProvider:
+    order: 0
+    policy: ${authentik_policy_expression.policy.id}
+    targetSelector:
+      matchLabels:
+        testing.upbound.io/example-name: name
+
+---
+
+apiVersion: customization.unbounded-tech.com/v1alpha1
+kind: PolicyExpression
+metadata:
+  annotations:
+    meta.upbound.io/example-id: applications/v1alpha1/application
+  labels:
+    testing.upbound.io/example-name: policy
+  name: policy
+spec:
+  forProvider:
+    expression: return True
+    name: example
+
+---
+
+apiVersion: applications.unbounded-tech.com/v1alpha1
+kind: ProviderOauth2
+metadata:
+  annotations:
+    meta.upbound.io/example-id: applications/v1alpha1/application
+  labels:
+    testing.upbound.io/example-name: name
+  name: name
+spec:
+  forProvider:
+    authorizationFlowSelector:
+      matchLabels:
+        testing.upbound.io/example-name: authentik_flow
+    clientId: example-app
+    clientSecretSecretRef:
+      key: example-key
+      name: example-secret
+      namespace: upbound-system
+    name: example-app
